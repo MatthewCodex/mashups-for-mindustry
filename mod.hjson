@@ -1,7 +1,7 @@
-name: "classic-music"
-displayName: "<Mindustry> Classic Music"
-author: "DaGamerFiles"
-description: "This mod will play tracks from classic Mindustry music (v3.3r27, v3.5r40, and v5)"
+name: "mashup-music"
+displayName: "Mashup Music"
+author: "M CODEX"
+description: "This mod will play mashup songs."
 version: "2.2"
 minGameVersion: "136"
 hidden: true
