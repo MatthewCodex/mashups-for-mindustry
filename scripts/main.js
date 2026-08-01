@@ -1,14 +1,13 @@
-Events.on(ClientLoadEvent, () => {
-    // 1. Load the sound files from your mod folder
-    // 'your-mod-internal-name' must match the 'name' field in your mod.json
-    let mashup1 = Vars.tree.loadSound("your-mod-internal-name-custom_day");
-    let mashup2 = Vars.tree.loadSound("your-mod-internal-name-custom_night");
-
-    // 2. Access the game's music collections
-    let ambientMusic = Musics.ambient;
-    let darkMusic = Musics.dark;
-
-    // 3. Inject your custom songs into the playlists
-    if (daySong) ambientMusic.add(daySong);
-    if (nightSong) darkMusic.add(nightSong);
-});
+// Check if client audio and SoundControl are accessible
+if (!Vars.headless) {
+  try {
+    // Load the custom music file from the music directory
+    let customTrack = new Music(tree.get("music/ambientmus-mysong.ogg"));
+    
+    // Add to the ambient music playlist pool
+    Control.sound.getAmbientMusic().add(customTrack);
+    Log.info("Custom ambient track loaded successfully!");
+  } catch (err) {
+    Log.err("Failed to load custom ambient track: " + err);
+  }
+}
