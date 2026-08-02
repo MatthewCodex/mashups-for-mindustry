@@ -33,4 +33,6 @@ function callOnPlanetChange(pl) {
       
   };
 };
-
+Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.fine);
+Vars.control.sound.darkMusic = Seq.with(Musics.game8, Musics.game9, Musics.game10, Musics.game11, Musics.game12, Musics.game13, Musics.game14, Musics.game15);
+Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2);
