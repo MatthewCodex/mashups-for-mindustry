@@ -19,20 +19,24 @@ function clearMusic() {
   Vars.control.sound.darkMusic = Seq.with();
   Vars.control.sound.bossMusic = Seq.with();
 };
-function callOnPlanetChange(pl) {
-  switch(pl) {
-    case (Planets.serpulo):
-        
-    case (Planets.sun): //So apparently the "<Any>" option in Mindustry sets the planet to the sun... wonderful.
-    case (Planets.erekir):
-        Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.fine);
-        Vars.control.sound.darkMusic = Seq.with(Musics.game8, Musics.game9, Musics.game10, Musics.game11, Musics.game12, Musics.game13, Musics.game14, Musics.game15);
-        Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2);
-        
-        return;
-      
-  };
-};
-Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.fine);
-Vars.control.sound.darkMusic = Seq.with(Musics.game8, Musics.game9, Musics.game10, Musics.game11, Musics.game12, Musics.game13, Musics.game14, Musics.game15);
-Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2);
+
+Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2);
+Vars.control.sound.ambientMusic.add(mus("game1"));
+Vars.control.sound.ambientMusic.add(mus("game2"));
+Vars.control.sound.ambientMusic.add(mus("game3"));
+Vars.control.sound.ambientMusic.add(mus("game4"));
+Vars.control.sound.ambientMusic.add(mus("game5"));
+Vars.control.sound.ambientMusic.add(mus("game6"));
+Vars.control.sound.ambientMusic.add(mus("game7"));
+Vars.control.sound.ambientMusic.add(mus("game8"));
+
+Vars.control.sound.darkMusic.add(mus("game9"));
+Vars.control.sound.darkMusic.add(mus("game10"));
+Vars.control.sound.darkMusic.add(mus("game11"));
+Vars.control.sound.darkMusic.add(mus("game12"));
+Vars.control.sound.darkMusic.add(mus("game13"));
+Vars.control.sound.darkMusic.add(mus("game14"));
+Vars.control.sound.darkMusic.add(mus("game15"));
+
+
+
