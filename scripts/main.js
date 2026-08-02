@@ -50,11 +50,13 @@ Timer.schedule(() => {
     try {
         Vars.control.sound.stop();
 
-        Vars.control.sound.playMusic(randomTrack);
-        Log.info("Playing selected ambient/dark track: " + randomTrack);
+        // Vars.control.sound.playMusic(randomTrack);
+        // Log.info("Playing selected ambient/dark track: " + randomTrack);
     } catch(err) {
         Log.err("Failed to play track: " + err);
     }
 }, delayInSeconds);
 
 Log.info("Timer started. Ambient track will play in 3.5 minutes.");
+
+
