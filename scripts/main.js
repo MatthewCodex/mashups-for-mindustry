@@ -48,9 +48,9 @@ const randomTrack = specialTracks[Math.floor(Math.random() * specialTracks.lengt
 // Schedule the song to play after the target delay
 Timer.schedule(() => {
     try {
-        Vars.control.sound.stopMusic();
+        Vars.control.sound.stop();
 
-        Vars.control.sound.playMusic(randomTrack);
+        Vars.control.sound.play(randomTrack);
         Log.info("Playing selected ambient/dark track: " + randomTrack);
     } catch(err) {
         Log.err("Failed to play track: " + err);
