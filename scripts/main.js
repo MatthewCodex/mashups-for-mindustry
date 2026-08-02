@@ -20,7 +20,7 @@ Events.on(ClientLoadEvent, active => {
 });
 
 // 3.5 minutes converted to seconds (3.5 * 60 = 210 seconds)
-const delayInSeconds = 210; 
+const delayInSeconds = 250; 
 
 // List of vanilla ambient/dark game track objects
 const specialTracks = [
@@ -50,7 +50,7 @@ Timer.schedule(() => {
     try {
         Vars.control.sound.stop();
 
-        Vars.control.sound.play(randomTrack);
+        Vars.control.sound.playMusic(randomTrack);
         Log.info("Playing selected ambient/dark track: " + randomTrack);
     } catch(err) {
         Log.err("Failed to play track: " + err);
