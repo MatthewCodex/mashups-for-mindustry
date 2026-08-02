@@ -19,24 +19,30 @@ function clearMusic() {
   Vars.control.sound.darkMusic = Seq.with();
   Vars.control.sound.bossMusic = Seq.with();
 };
-
-Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2);
-Vars.control.sound.ambientMusic.add(mus("game1"));
-Vars.control.sound.ambientMusic.add(mus("game2"));
-Vars.control.sound.ambientMusic.add(mus("game3"));
-Vars.control.sound.ambientMusic.add(mus("game4"));
-Vars.control.sound.ambientMusic.add(mus("game5"));
-Vars.control.sound.ambientMusic.add(mus("game6"));
-Vars.control.sound.ambientMusic.add(mus("game7"));
-Vars.control.sound.ambientMusic.add(mus("game8"));
-
-Vars.control.sound.darkMusic.add(mus("game9"));
-Vars.control.sound.darkMusic.add(mus("game10"));
-Vars.control.sound.darkMusic.add(mus("game11"));
-Vars.control.sound.darkMusic.add(mus("game12"));
-Vars.control.sound.darkMusic.add(mus("game13"));
-Vars.control.sound.darkMusic.add(mus("game14"));
-Vars.control.sound.darkMusic.add(mus("game15"));
-
-
-
+function callOnPlanetChange(pl) {
+  switch(pl) {
+    case (Planets.serpulo):
+          
+        Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.fine);
+        Vars.control.sound.darkMusic = Seq.with(Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"));
+        Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2);
+      
+    case (Planets.sun): //So apparently the "<Any>" option in Mindustry sets the planet to the sun... wonderful.
+    case (Planets.erekir):
+          
+        Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.fine);
+        Vars.control.sound.darkMusic = Seq.with(Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"));
+        Vars.control.sound.bossMusic = Seq.with(Musics.boss1, Musics.boss2, Musics.game2);
+        
+        
+        return;
+      
+  };
+};
+let planet = null, planetCur = null;
+Events.run(Trigger.update, () => {
+  if(Vars.state.isMenu() || Vars.state.isEditor()) return;
+  planetCur = Vars.state.getPlanet();
+  if(planetCur != planet) callOnPlanetChange(planetCur);
+  planet = planetCur;
+});
