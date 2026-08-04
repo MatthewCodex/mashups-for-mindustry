@@ -14,9 +14,9 @@ function mus(e) {
 Events.on(ClientLoadEvent, active => {
     Log.info("Mindustry Client has started up!");
     // Your main-menu or global initialization logic goes here
-    Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"));
-    Vars.control.sound.darkMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"));
-    Vars.control.sound.bossMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"));
+    Vars.control.sound.ambientMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"), mus("game16"));
+    Vars.control.sound.darkMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"), mus("game16"));
+    Vars.control.sound.bossMusic = Seq.with(Musics.game1, Musics.game2, Musics.game3, Musics.game4, Musics.game5, Musics.game6, Musics.game7, Musics.game8, Musics.game9, mus("game10"), mus("game11"), mus("game12"), mus("game13"), mus("game14"), mus("game15"), mus("game16"));
 });
 
 // 3.5 minutes converted to seconds (3.5 * 60 = 210 seconds)
@@ -39,24 +39,8 @@ const specialTracks = [
     mus("game13"),
     mus("game14"),
     mus("game15"),
-
+    mus("game15")
 ];
 
 // Pick a random track from the array
 const randomTrack = specialTracks[Math.floor(Math.random() * specialTracks.length)];
-
-// Schedule the song to play after the target delay
-Timer.schedule(() => {
-    try {
-        Vars.control.sound.stop();
-
-        // Vars.control.sound.playMusic(randomTrack);
-        // Log.info("Playing selected ambient/dark track: " + randomTrack);
-    } catch(err) {
-        Log.err("Failed to play track: " + err);
-    }
-}, delayInSeconds);
-
-Log.info("Timer started. Ambient track will play in 3.5 minutes.");
-
-
